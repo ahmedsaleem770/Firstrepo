@@ -1,0 +1,25 @@
+Question 1
+
+print("Enter 5 Subjects Marks:")
+S1 = int(input())
+S2 = int(input())
+S3 = int(input())
+S4 = int(input())
+S5 = int(input())
+Total_Marks = S1+S2+S3+S4+S5
+Avg_Marks = Total_Marks/5
+if Avg_Marks >= 80:
+    print("Your Subject Grade is A")
+elif Avg_Marks <= 80 and Avg_Marks >= 50:
+    print("Your Subject Grade is B")
+elif Avg_Marks < 50:
+    print("Your Subject Grade is C")
+else:
+    print("Invalid Input")
+
+Question: 2
+
+import re
+openfile = open('Assignment.txt', 'r')
+email = re.findall(r'\b([a-z0-9-_.]+?@[a-z0-9-_.]+)\b', openfile.read(),re.I)
+print(email)
