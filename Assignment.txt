@@ -1,0 +1,27 @@
+import random
+import math
+
+lower = int(input("Enter Lower bound: "))
+upper = int(input("Enter Upper bound: "))
+
+x = random.randint(lower, upper)
+print("\n\tYou have only ",
+      round(math.log(upper - lower + 1, 2)),
+      " chances to guess the number!\n")
+count = 0
+while count < math.log(upper - lower + 1, 2):
+    count = count+1
+    guess = int(input("Guess a number:- "))
+
+    if x == guess:
+        print("Congratulations! You did it in ",
+              count, " try")
+        break
+    elif x > guess:
+        print("You Guessed Smaller Number!")
+    elif x < guess:
+        print("You Guessed Greater Number!")
+
+if count >= math.log(upper - lower + 1, 2):
+    print("\nThe number is %d" % x)
+    print("\t\tBetter Luck Next time!")
